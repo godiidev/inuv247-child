@@ -5,7 +5,7 @@
                 <div class="coblog-copyrhigt">
                     <?php $coblog_footer_logo = get_theme_mod( 'footer_logo', COBLOG_URI.'/assets/images/footer-logo.png' );?>
                     <?php $coblog_footer_share = get_theme_mod( 'enable_footer_share', 1 );?>
-                    <?php echo do_shortcode( '[wp_reusable_render id="52"]' );?>
+                    <?php echo do_shortcode( '[wp_reusable_render id="2348"]' );?>
                     <?php if($coblog_footer_share == 0) { ?>
                     <div class="coblog-social-icon coblog-footer-social-icon">
                         <ul>
