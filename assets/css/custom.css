@@ -6,8 +6,9 @@
   font-size: 14px;
 }
 .coblog-header-five {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-bottom: none;
 }
 .coblog-body-header-five .coblog-post-single-wrap {
   margin-top: 10px;
@@ -47,6 +48,214 @@
   background-position: center;
   background-size: 25px;
   margin-left: 10px;
+}
+/* Header Custom Background - Gradient Trắng Xám */
+.coblog-header-five.coblog-header-custom {
+    background: linear-gradient(135deg, #ff6b35 0%, #f9ca24 50%, #f0932b 100%);
+    position: relative;
+    overflow: hidden;
+}
+/* Logo Background Wrapper - Base nền đen */
+.logo-background-wrapper {
+    position: relative;
+    min-height: 60px;
+    width: 230px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #ff6b35 0%, #ffa726 40%, #ffcc02 100%);
+    clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 0% 100%);
+    overflow: hidden;
+}
+
+/* Lớp 1: Gradient cam lớn nhất - cắt chéo */
+.logo-gradient-layer {
+    position: absolute;
+    top: 0;
+    width: 180px;
+    height: 100%;
+    background: #1a1a1a;
+    clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
+    z-index: 1;
+}
+
+
+/* .logo-background-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #e0e0e0 100%);
+    clip-path: polygon(0% -20%, 100% 0%, 100% 100%, 100% 100%);
+    z-index: 3;
+} */
+
+/* Logo Content */
+.logo-content {
+    position: relative;
+    z-index: 10;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-content .coblog-logo-wrapper {
+    display: block;
+}
+
+.logo-content .coblog-logo {
+    max-height: 45px;
+    width: auto;
+}
+
+/* Logo Styling Override */
+.coblog-header-custom .coblog-site-branding {
+    flex: 0 0 auto;
+    margin-right: 30px;
+}
+
+/* Action Buttons - Styling cho nền trắng */
+.coblog-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-action-btn {
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    white-space: nowrap;
+}
+
+.header-action-btn:hover {
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+}
+
+.header-action-btn.primary {
+    background: #ffcc02;
+    color: #333;
+    font-weight: 600;
+}
+
+.header-action-btn.primary:hover {
+    background: #ffd54f;
+    color: #333;
+}
+
+/* Search User Cart Section */
+.coblog-header-custom .coblog-search-user-cart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+}
+
+/* Hide default elements */
+.coblog-header-custom .coblog-search-user-cart > *:not(.coblog-action-buttons) {
+    display: none;
+}
+
+/* Hamburger Menu Button - Styling cho nền trắng */
+.coblog-hamburger-menu {
+    flex: 0 0 auto;
+    margin-left: 15px;
+}
+
+.hamburger-menu-btn {
+    background: rgba(0,0,0,0.7);
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu-btn span {
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger-menu-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+/* Hamburger Animation */
+.hamburger-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Hamburger Menu Content */
+.coblog-hamburger-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 20px 0;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.coblog-hamburger-content.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.hamburger-menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hamburger-menu-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hamburger-menu-list li a:hover {
+    color: #ffcc02;
 }
 /* =============================================================================
    MENU IN HEADER CUSTOMIZATIONS
