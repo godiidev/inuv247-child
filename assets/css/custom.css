@@ -1,30 +1,37 @@
 @charset "UTF-8";
+
 /* =============================================================================
    HEADER CUSTOMIZATIONS
    ========================================================================== */
 .coblog-topbar {
   font-size: 14px;
 }
+
 .coblog-header-five {
   padding-top: 0px;
   padding-bottom: 0px;
   border-bottom: none;
 }
+
 .coblog-body-header-five .coblog-post-single-wrap {
   margin-top: 10px;
 }
+
 .coblog-header-search {
   height: 150px;
   background: #78ac3e;
 }
+
 .search {
   width: auto;
 }
+
 .search .search-form {
   border: none;
   padding: 0;
   background-color: transparent;
 }
+
 .search .search-field {
   position: relative;
   display: block;
@@ -39,6 +46,7 @@
   min-width: 200px;
   padding: 0px 7px 4px;
 }
+
 .hs_active .search-button {
   position: relative;
   display: inline-block;
@@ -49,268 +57,265 @@
   background-size: 25px;
   margin-left: 10px;
 }
+
 /* Header Custom Background - Gradient Trắng Xám */
 .coblog-header-five.coblog-header-custom {
-    background: linear-gradient(135deg, #ff6b35 0%, #f9ca24 50%, #f0932b 100%);
-    position: relative;
-    overflow: hidden;
+  background: linear-gradient(135deg, #ff6b35 0%, #f9ca24 50%, #f0932b 100%);
+  position: relative;
+  overflow: hidden;
 }
+
 /* Logo Background Wrapper - Base nền đen */
 .logo-background-wrapper {
-    position: relative;
-    min-height: 60px;
-    width: 230px;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, #ff6b35 0%, #ffa726 40%, #ffcc02 100%);
-    clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 0% 100%);
-    overflow: hidden;
+  position: relative;
+  min-height: 60px;
+  width: 230px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #ff6b35 0%, #ffa726 40%, #ffcc02 100%);
+  clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 0% 100%);
+  overflow: hidden;
 }
 
 /* Lớp 1: Gradient cam lớn nhất - cắt chéo */
 .logo-gradient-layer {
-    position: absolute;
-    top: 0;
-    width: 180px;
-    height: 100%;
-    background: #1a1a1a;
-    clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 180px;
+  height: 100%;
+  background: #1a1a1a;
+  clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 0% 100%);
+  z-index: 1;
 }
-
-
-/* .logo-background-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100%;
-    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #e0e0e0 100%);
-    clip-path: polygon(0% -20%, 100% 0%, 100% 100%, 100% 100%);
-    z-index: 3;
-} */
 
 /* Logo Content */
 .logo-content {
-    position: relative;
-    z-index: 10;
-    padding: 0px 10px;
-    display: flex;
-    align-items: center;
+  position: relative;
+  z-index: 10;
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
 }
 
 .logo-content .coblog-logo-wrapper {
-    display: block;
+  display: block;
 }
 
 .logo-content .coblog-logo {
-    max-height: 45px;
-    width: auto;
+  max-height: 45px;
+  width: auto;
 }
 
 /* Logo Styling Override */
 .coblog-header-custom .coblog-site-branding {
-    flex: 0 0 auto;
-    margin-right: 30px;
+  flex: 0 0 auto;
+  margin-right: 30px;
 }
 
 /* Action Buttons - Styling cho nền trắng */
 .coblog-action-buttons {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .header-action-btn {
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 13px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: none;
-    white-space: nowrap;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  white-space: nowrap;
 }
 
 .header-action-btn:hover {
-    background: rgba(0,0,0,0.8);
-    color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
 }
 
 .header-action-btn.primary {
-    background: #ffcc02;
-    color: #333;
-    font-weight: 600;
+  background: #ffcc02;
+  color: #333;
+  font-weight: 600;
 }
 
 .header-action-btn.primary:hover {
-    background: #ffd54f;
-    color: #333;
+  background: #ffd54f;
+  color: #333;
 }
 
 /* Search User Cart Section */
 .coblog-header-custom .coblog-search-user-cart {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex: 0 0 auto;
-}
-
-/* Hide default elements */
-.coblog-header-custom .coblog-search-user-cart > *:not(.coblog-action-buttons) {
-    display: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
 }
 
 /* Hamburger Menu Button - Styling cho nền trắng */
 .coblog-hamburger-menu {
-    flex: 0 0 auto;
-    margin-left: 15px;
+  flex: 0 0 auto;
+  margin-left: 15px;
 }
 
 .hamburger-menu-btn {
-    background: rgba(0,0,0,0.7);
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    width: 40px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .hamburger-menu-btn span {
-    width: 20px;
-    height: 2px;
-    background: #fff;
-    transition: all 0.3s ease;
-    transform-origin: center;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+  transform-origin: center;
 }
 
 .hamburger-menu-btn:hover {
-    background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 /* Hamburger Animation */
 .hamburger-menu-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-menu-btn.active span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .hamburger-menu-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* Hamburger Menu Content */
 .coblog-hamburger-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 20px 0;
-    transform: translateY(-10px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 20px 0;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
 .coblog-hamburger-content.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
 }
 
 .hamburger-menu-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .hamburger-menu-list li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 10px 0;
-    display: block;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0;
+  display: block;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .hamburger-menu-list li a:hover {
-    color: #ffcc02;
+  color: #ffcc02;
 }
+
 /* =============================================================================
    MENU IN HEADER CUSTOMIZATIONS
    ========================================================================== */
-ul.coblog-topbar-menu > li > a {
+ul.coblog-topbar-menu>li>a {
   font-size: 1em;
   letter-spacing: 0;
   font-weight: 600;
   color: #fff;
 }
-ul.primary-menu > li > a {
+
+ul.primary-menu>li>a {
   font-size: 0.9em;
   letter-spacing: 0;
 }
-ul.primary-menu > li > a{
+
+ul.primary-menu>li>a {
   font-weight: 600;
 }
+
 ul.sub-menu li a {
   color: #000;
 }
+
 ul.sub-menu li a {
   font-size: 15px;
   padding: 10px 0;
 }
+
 .btn-header button:hover {
   color: white;
   width: auto;
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
   background-color: rgb(255, 0, 0);
 }
+
 .coblog-header-five .main-navigation {
   margin-left: auto;
   margin-right: 15px;
 }
+
 ul.sub-menu li a {
   color: #000;
 }
+
 ul.sub-menu li a {
   font-size: 15px;
   padding: 10px 0;
 }
+
 ul.primary-menu ul,
 ul.coblog-topbar-menu ul {
   padding: 7px 15px;
 }
+
 .coblog-account-icon-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
+
 .navbar__link {
   justify-content: center;
   padding: 0 .625rem;
   position: relative;
 }
+
 /* Responsive Menu style */
 .coblog-responsive-menu-option .coblog-trigger {
   width: 90px;
@@ -322,10 +327,12 @@ ul.coblog-topbar-menu ul {
   display: flex;
   line-height: 1em;
 }
+
 .coblog-responsive-menu-option .coblog-trigger {
   color: #000;
   font-size: 18px;
 }
+
 .coblog-responsive-menu-option .coblog-trigger:after {
   content: "Menu";
   transform: translateY(0);
@@ -335,6 +342,7 @@ ul.coblog-topbar-menu ul {
   text-transform: uppercase;
   line-height: 1;
 }
+
 a.menu-trigger {
   width: 85px;
   height: 100%;
@@ -345,17 +353,21 @@ a.menu-trigger {
   padding: 5px 0;
   height: 50px;
 }
+
 a.menu-trigger i {
   font-style: normal;
   color: #000;
 }
+
 .coblog-responsive-menu-option {
   line-height: 1em;
   padding-bottom: 2px;
 }
+
 .coblog-responsive-menu-option .coblog-search:after {
   display: none;
 }
+
 .btn-header button {
   cursor: pointer;
   border: 0;
@@ -367,21 +379,131 @@ a.menu-trigger i {
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
   transition: 0.4s;
 }
+
 /* Notify style */
 .reg {
   color: white;
   background-color: #ffba00;
 }
+
 .reg a {
   color: #fff;
 }
+
 .log {
   color: rgb(104, 85, 224);
   background-color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(104, 85, 224, 1);
 }
+
 button.log:hover a {
   color: rgb(255, 255, 255);
+}
+
+/* HOME PAGE CUSTOMIZATIONS SECTION SOLUTIONS */
+.solutions-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.solution-item {
+  background: #fff;
+  padding: 40px 10px 20px 10px;
+  min-width: 160px;
+  max-width: 170px;
+  text-align: center;
+  position: relative;
+  margin-top: 25px;
+  border: 3px solid #ffcc02;
+  border-radius: 20px;
+  transform: perspective(300px) rotateX(-25deg);
+  transform-origin: center top;
+  box-shadow: 0 10px 25px rgba(220, 220, 220, 0.3);
+  transition: all 0.3s ease;
+}
+
+.solution-item:hover {
+  transform: perspective(300px) rotateX(-25deg) translateY(-5px);
+  box-shadow: 0 15px 35px rgba(220, 220, 220, 0.45);
+}
+
+/* Icon Container - Notch style */
+.solution-icon {
+  width: 90px;
+  height: 30px;
+  margin: 0 auto;
+  border-radius: 5px 5px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Colors */
+.solution-icon.warranty {
+  background: linear-gradient(135deg, #4CAF50, #66BB6A);
+  color: #fff;
+}
+
+.solution-icon.support {
+  background: linear-gradient(135deg, #FF9800, #FFB74D);
+  color: #fff;
+}
+
+.solution-icon.quality {
+  background: linear-gradient(135deg, #9C27B0, #BA68C8);
+  color: #fff;
+}
+
+.solution-icon.printing {
+  background: linear-gradient(135deg, #00BCD4, #4DD0E1);
+  color: #fff;
+}
+
+.solution-icon.production {
+  background: linear-gradient(135deg, #8BC34A, #AED581);
+  color: #fff;
+}
+
+/* Icon SVG */
+.solution-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Text Content */
+.solution-text {
+  position: relative;
+  color: #333;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.solution-text strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+  line-height: 1.2;
+}
+
+.solution-text span {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
 }
 
 /* =============================================================================
@@ -390,97 +512,121 @@ button.log:hover a {
 .coblog-entry-header {
   max-width: 100%;
 }
+
 .coblog-entry-header {
   text-align: left;
   margin-bottom: 0px;
 }
+
 #intro {
   background-color: #fff;
   margin: 0;
   padding: 7px 14px 3px;
 }
+
 #intro.hasad {
   padding-bottom: 0;
   border-bottom: 0;
 }
+
 .pre-content {
   background-color: #fff;
   border-bottom: none;
   margin: 0;
 }
+
 a.pdf_link,
 a.offline_link {
   color: #545454;
   border-radius: 4px;
 }
-.pdf_link > img,
-.offline_link > img {
+
+.pdf_link>img,
+.offline_link>img {
   width: 15px;
   margin-right: 5px;
 }
+
 #coauthor_byline {
   margin-bottom: 0.75rem;
 }
+
 .article_byline {
   color: #222;
   font-size: 12px;
   overflow: auto;
 }
+
 #byline_info {
   line-height: 1rem;
 }
+
 .newline {
   display: block;
 }
+
 #coauthor_byline p:last-child {
   padding-top: 0.1em;
 }
+
 #intro .article_byline p {
   line-height: 1rem;
   margin: 0;
 }
+
 #coauthor_byline p,
 #coauthor_byline p a {
   color: #595959;
 }
+
 a.byline_info_link:hover {
   text-decoration: underline;
 }
+
 a.byline_references:hover {
   text-decoration: underline;
 }
+
 .last_updated_highlighted {
   font-weight: bold;
 }
+
 /* =============================================================================
    BREADCRUMB POST CUSTOMIZATIONS
    ========================================================================== */
 .pre-content .rank-math-breadcrumb p {
   margin: 2px;
 }
+
 nav.rank-math-breadcrumb {
   padding: 0em 0 0.8em 14px;
 }
+
 #breadcrumb li:nth-last-child(2),
 #breadcrumb li:last-child {
   display: inline-block;
   font-weight: bold;
 }
+
 #breadcrumb li {
   display: none;
   line-height: 1em;
   padding-right: 0.5em;
 }
+
 .breadcrumbs li {
   display: inline-block;
   padding-right: 0.3em;
 }
+
 .page-breadcrumb nav.rank-math-breadcrumb p {
   text-align: center;
 }
+
 .page-breadcrumb nav.rank-math-breadcrumb a {
   color: #fff !important;
 }
+
 .rank-math-breadcrumb a {
   text-transform: uppercase;
   font-size: 20px;
@@ -489,20 +635,24 @@ nav.rank-math-breadcrumb {
   color: #3fb549 !important;
   border-bottom: none !important;
 }
+
 #breadcrumb li:nth-last-child(2),
 #breadcrumb li:last-child {
   display: inline-block;
   font-weight: bold;
 }
+
 #breadcrumb li {
   display: none;
   line-height: 1em;
   padding-right: 0.5em;
 }
+
 .breadcrumbs li {
   display: inline-block;
   padding-right: 0.3em;
 }
+
 /* =============================================================================
    POST CONTENT CUSTOMIZATIONS
    ========================================================================== */
@@ -514,19 +664,23 @@ nav.rank-math-breadcrumb {
   background-position: center;
   background-size: cover;
 }
+
 .w-blog-list {
   width: 100%;
   margin: auto;
   transition: all 0.3s ease-out;
 }
+
 .coblog-layout-full .coblog-post-single .entry-content {
   max-width: 80%;
   margin: auto;
 }
+
 .coblog-entry-header-single {
   margin-bottom: 30px;
   text-align: left;
 }
+
 .coblog-entry-title {
   font-size: 26px;
   font-weight: 700;
@@ -539,21 +693,25 @@ nav.rank-math-breadcrumb {
   padding: 0em 0px 0.1em 14px;
   margin-bottom: 0px !important;
 }
+
 .coblog-entry-meta {
   position: relative;
   padding-top: 0px;
   margin-top: 0px;
   margin-bottom: 15px;
 }
+
 .coblog-entry-meta:before {
   border: none;
 }
+
 .coblog-entry-meta {
   display: flex;
   justify-content: space-between;
   position: relative;
   align-items: center;
 }
+
 .godii-auth-dtl {
   display: flex;
   align-items: center;
@@ -561,6 +719,7 @@ nav.rank-math-breadcrumb {
   padding-bottom: 30px;
   margin-bottom: -30px;
 }
+
 span.coblog-meta-img {
   display: block;
   max-width: 65px;
@@ -568,27 +727,33 @@ span.coblog-meta-img {
   height: 65px;
   position: relative;
 }
+
 .coblog-meta-img img {
   width: 100%;
   height: 100%;
 }
+
 .godii-auth-rdtl {
   padding-left: 22px;
   position: relative;
 }
+
 span.coblog-meta-author {
   font-size: 24px !important;
   line-height: 1.25 !important;
   letter-spacing: -0.5px !important;
   margin: 0;
 }
+
 .coblog-entry-meta span a {
   color: #000;
   transition: 0.4s;
 }
+
 .coblog-meta-author a {
   margin-left: 0px;
 }
+
 .coblog-entry-meta .coblog-meta-author:after {
   position: absolute;
   content: "";
@@ -598,20 +763,24 @@ span.coblog-meta-author {
   right: -2px;
   top: 55%;
 }
+
 .coblog-layout-wrap {
   grid-column-gap: 40px;
 }
+
 #secondary .coblog-widget {
-    background: #fff;
-    padding: 0px 5px;
-    margin-bottom: 10px;
+  background: #fff;
+  padding: 0px 5px;
+  margin-bottom: 10px;
 }
+
 /* =============================================================================
    ARCHIVE CUSTOMIZATIONS
    ========================================================================== */
 .archive.coblog-body-header-five .coblog-page-title {
   margin-top: 0px;
 }
+
 .coblog-page-title {
   margin-bottom: 25px;
   border-bottom: none;
@@ -621,27 +790,32 @@ span.coblog-meta-author {
   font-weight: 700;
   font-size: 35px;
 }
+
 .godii-art-opt {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
 }
+
 .godii-art-opt ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .post-categories {
   list-style: none;
   padding: 0;
   display: flex;
 }
+
 .post-categories li {
   margin: 0;
   display: flex;
   align-items: center;
 }
+
 .post-categories li:after {
   content: "\30FB";
   font-size: 22px;
@@ -654,32 +828,39 @@ span.coblog-meta-author {
   margin-top: 2px;
   color: #5ec92a;
 }
+
 .post-categories li:last-child::after {
   display: none;
 }
+
 .list-style-no,
 .list-unstyled {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 ul.post-categories {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 600;
   padding: 0em 0 0.8em 14px;
 }
+
 .coblog-post-thumbnail img {
   margin-bottom: 0px;
 }
+
 .godii-art-desc {
   margin-bottom: 15px;
   line-height: 1.565;
 }
+
 .godii-art-desc,
 .godii-art-prsnt:first-of-type {
   margin-top: 10px;
 }
+
 .viewpost {
   align-items: center;
   display: flex;
@@ -689,6 +870,7 @@ ul.post-categories {
   font-size: 15px;
   list-style: none;
 }
+
 .viewpost .svg-icon {
   width: 14px;
   height: 14px;
@@ -696,17 +878,21 @@ ul.post-categories {
   flex: 0 0 14px;
   margin-right: 10px;
 }
+
 .svg-icon svg {
   height: 100%;
   width: 100%;
 }
+
 .svg-icon svg {
   display: block;
 }
+
 [class^="wp-block-"]:not(.wp-block-gallery) figcaption {
   background: transparent;
   text-align: center;
 }
+
 body,
 button,
 input,
@@ -715,27 +901,33 @@ optgroup,
 textarea {
   font-size: 18px;
 }
+
 .coblog-post-single entry-content p a {
   color: inherit;
   border-bottom: 2.5px solid #71c21b;
 }
+
 .coblog-post-single ul a {
   color: inherit;
   border-bottom: 2.5px solid #71c21b;
 }
+
 .coblog-post-single ol a {
   color: inherit;
   border-bottom: 2.5px solid #71c21b;
 }
+
 .coblog-post-single {
   font-size: 19px;
   color: #252525;
   line-height: 1.725;
   font-family: revert;
 }
+
 .wp-block-quote {
   border-left: 0.25em solid #5ec92a;
 }
+
 /* =============================================================================
   CATEGORY CUSTOMIZATIONS
    ========================================================================== */
@@ -743,56 +935,70 @@ textarea {
 .coblog-layout-left-sidebar {
   grid-column-gap: 30px;
 }
+
 .godii-art-inner {
   font-size: 18px;
   display: flex;
   flex-flow: column;
   height: 100%;
 }
+
 .godii-art-part:last-child {
   display: flex;
   flex-flow: column;
   flex: 1;
 }
+
 .godii-sect {
   padding-top: 10px;
 }
+
 .sss2_sllo_o2 {
   margin-bottom: 4%;
 }
+
 .ss2_sllo_o2 {
   margin-top: 2%;
 }
+
 .content .cat_section h2,
 #cat_topics h2 {
   padding-top: 0;
   font-size: 1.2em;
   font-weight: bold;
 }
+
 .cat_grid,
 .cat_grid_single {
   display: flex;
   flex-wrap: wrap;
 }
-.responsive_thumb.custom_title a > div {
+
+.responsive_thumb.custom_title a>div {
   padding-top: 11px;
 }
+
 .responsive_thumb .content-spacer {
   overflow: hidden;
 }
+
 .responsive_thumb .content-spacer {
   overflow: hidden;
 }
+
 .content-spacer {
   position: relative;
 }
-.responsive_thumb a > .responsive_thumb_title {
+
+.responsive_thumb a>.responsive_thumb_title {
   padding: 0 10px;
   padding-top: 6px;
 }
+
 .stable .content .responsive_thumb h3 {
   line-height: 21px;
 }
+
 .responsive_thumb a h3 {
   font-size: 16px;
   color: #000;
@@ -800,30 +1006,36 @@ textarea {
   margin-bottom: 0;
   margin-top: 0;
 }
-.cat_grid > .responsive_thumb,
-.cat_grid_single > .responsive_thumb {
+
+.cat_grid>.responsive_thumb,
+.cat_grid_single>.responsive_thumb {
   width: 48%;
   margin-right: 1%;
   margin-bottom: 1%;
 }
+
 .responsive_thumb {
   border: 1px solid #dfdfdf;
   border-radius: 7px;
   position: relative;
   overflow: hidden;
 }
+
 .cat_grid_featured img {
   max-width: 100%;
   width: 100%;
   height: auto;
 }
-.cat_grid > .responsive_thumb:nth-child(2n),
-.cat_grid_single > .responsive_thumb:nth-child(2n) {
+
+.cat_grid>.responsive_thumb:nth-child(2n),
+.cat_grid_single>.responsive_thumb:nth-child(2n) {
   margin-right: 0;
 }
+
 .img-loading-alt {
   color: #000;
 }
+
 .content-fill {
   position: absolute;
   top: 0;
@@ -836,9 +1048,11 @@ textarea {
   min-height: 100%;
   color: #fff;
 }
+
 .content-area .responsive_thumb h3 {
   line-height: 25px;
 }
+
 #primary-page-center {
   padding: 0;
   min-height: 100%;
@@ -848,130 +1062,157 @@ textarea {
   background-color: #fff;
   transition: all 0.5s ease 0s;
 }
-.responsive_thumb a > .responsive_thumb_title {
+
+.responsive_thumb a>.responsive_thumb_title {
   padding: 0 10px;
   padding-top: 6px;
 }
-.responsive_thumb.custom_title a > div {
+
+.responsive_thumb.custom_title a>div {
   padding-top: 11px;
 }
+
 .site-content {
   margin-bottom: 0px;
 }
+
 .hp_thumb .ultp-block-content-wrap {
   border: 1px solid #dfdfdf;
 }
+
 .hp_thumb .ultp-block-content {
   min-height: 105px;
 }
+
 .pagination {
-    padding: 25px 0 20px;
+  padding: 25px 0 20px;
 }
+
 .pagination .nav-links {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style: none;
 }
+
 .pagination .page-numbers {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    padding: 9px 0;
-    color: #606B71;
-    text-align: center;
-    border-radius: 5px;
-    transition: all 0.5s;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 9px 0;
+  color: #606B71;
+  text-align: center;
+  border-radius: 5px;
+  transition: all 0.5s;
 }
+
 .pagination .page-numbers:hover {
-    color: rgba(255, 255, 255, 1);
-    background-color: #00935b;
+  color: rgba(255, 255, 255, 1);
+  background-color: #00935b;
 }
+
 .pagination .current::after {
-    position: absolute;
-    width: 14px;
-    margin-top: 25px;
-    margin-left: -11px;
-    border-bottom: solid 1px #00935b;
-    cursor: pointer;
-    transition: all 0.5s;
-    content: '';
+  position: absolute;
+  width: 14px;
+  margin-top: 25px;
+  margin-left: -11px;
+  border-bottom: solid 1px #00935b;
+  cursor: pointer;
+  transition: all 0.5s;
+  content: '';
 }
+
 .coblog-page-layout-wrap .type-page {
   background-color: #fff;
   padding: 16px;
   margin: 0 0 15px 0;
 }
+
 .type-page h1.entry-title {
   margin: 0px 0px;
 }
+
 ul#breadcrumb {
-    display: none;
+  display: none;
 }
-.section .headline_container:not(.subheadline), .steps .headline_container {
-    background-color: #F0F4EB;
-    width: 100%;
-    box-sizing: border-box;
-    display: table;
+
+.section .headline_container:not(.subheadline),
+.steps .headline_container {
+  background-color: #F0F4EB;
+  width: 100%;
+  box-sizing: border-box;
+  display: table;
 }
-.section-heading h2{
-    display: inline-block;
-    padding: .8em;
-    color: #222;
+
+.section-heading h2 {
+  display: inline-block;
+  padding: .8em;
+  color: #222;
 }
-.section_text, .steps_text {
-    padding: 15px;
-    background-color: #FFF;
-    border-radius: 0 0 4px 4px;
-    font-size: 16px;
+
+.section_text,
+.steps_text {
+  padding: 15px;
+  background-color: #FFF;
+  border-radius: 0 0 4px 4px;
+  font-size: 16px;
 }
+
 #references ol {
-    list-style: decimal inside;
-    margin: 0;
+  list-style: decimal inside;
+  margin: 0;
 }
+
 .related-wh {
-    display: block;
-    margin-bottom: 2%;
-    overflow: hidden;
+  display: block;
+  margin-bottom: 2%;
+  overflow: hidden;
 }
+
 .related-wh {
-    position: relative;
-    margin-bottom: 0;
+  position: relative;
+  margin-bottom: 0;
 }
+
 .content-spacer .coblog-post-thumbnail img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
+
 .related-wh-title {
-    background-color: rgba(50, 50, 50, 0.5);
-    padding: 0% 4%;
-    width: 100%;
-    min-height: 32px;
-    position: absolute;
-    bottom: 10px;
-    cursor: pointer;
-    color: #fff;
-    font-weight: bold;
+  background-color: rgba(50, 50, 50, 0.5);
+  padding: 0% 4%;
+  width: 100%;
+  min-height: 32px;
+  position: absolute;
+  bottom: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
 }
 
 ol.references-list {
-    padding-left: .5em;
+  padding-left: .5em;
 }
+
 /* =============================================================================
    FOOTER CUSTOMIZATIONS
    ========================================================================== */
 .coblog-copyright-img {
   text-align: center;
 }
+
 .coblog-footer-two .coblog-copyrhigt-text {
   border-top: none;
   padding: 10px 10px;
 }
+
 #relatedsynex {
-    padding: 2%;
-    display: table;
+  padding: 2%;
+  display: table;
 }
+
 .topbutton {
   height: 40px;
   width: 40px;
@@ -986,6 +1227,7 @@ ol.references-list {
   text-align: center;
   border-radius: 4px;
 }
+
 .topbutton i {
   line-height: 1em;
 }
@@ -994,6 +1236,7 @@ ol.references-list {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
