@@ -51,11 +51,13 @@
                             'prev_text' => '<span>' . esc_html__('Previous', 'coblog') . '</span><span class="screen-reader-text">' . esc_html__('Previous page', 'coblog') . '</span>',
                             'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__('Page', 'coblog') . ' </span>',
                         )); ?>
-                    </div><!--/.coblog-layout-inside-->
+                    </div>
+                    <!--/.coblog-layout-inside-->
                     <?php if ($coblog_archive == 'right') {
                         get_sidebar();
                     } ?>
-                </div><!--/.coblog-layout-wrap-->
+                </div>
+                <!--/.coblog-layout-wrap-->
             <?php else :
                 get_template_part('template-parts/content/content', 'none');
             endif;
