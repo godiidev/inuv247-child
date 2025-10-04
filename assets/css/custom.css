@@ -505,7 +505,47 @@ button.log:hover a {
   letter-spacing: 0.5px;
   line-height: 1.2;
 }
+/* Feature home page */
+.feature-home-item {
+  text-align: center;
+  color: white;
+}
 
+.feature-home-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-home-icon svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+}
+
+.feature-home-title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.feature-home-description {
+  color: #F0F4EB;
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin: 0 auto;
+}
 /* =============================================================================
    BODY POST CUSTOMIZATIONS
    ========================================================================== */

@@ -828,7 +828,7 @@ only screen and (orientation: landscape) {}
   .topbutton {
     left: auto;
     left: 5px;
-    bottom: 70px;
+    bottom: 30px;
   }
 
   .coblog-layout-right-sidebar .widget-area {
