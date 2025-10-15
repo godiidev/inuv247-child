@@ -170,5 +170,131 @@ jQuery(document).ready(function($) {
   }
 });
 
+/**
+ * Greenshift Mouse Parallax Effect
+ * Phù hợp cho Greenshift iconbox blocks
+ */
+(function() {
+    'use strict';
+
+    class GreenshiftParallax {
+        constructor() {
+            this.container = document.querySelector('.parallax-scene-3');
+            if (!this.container) return;
+
+            // Lấy tất cả icon boxes
+            this.icons = {
+                one: this.container.querySelector('.icon-one'),
+                two: this.container.querySelector('.icon-two'),
+                three: this.container.querySelector('.icon-three'),
+                four: this.container.querySelector('.icon-four')
+            };
+
+            // Kiểm tra xem có đủ icons không
+            if (!this.icons.one) return;
+
+            this.width = window.innerWidth;
+            this.height = window.innerHeight;
+            
+            // Độ sâu mặc định cho mỗi icon (có thể tùy chỉnh)
+            this.depths = {
+                one: 0.20,
+                two: 0.30,
+                three: 0.25,
+                four: 0.15
+            };
+
+            this.init();
+        }
+
+        init() {
+            this.setStyles();
+            this.bindEvents();
+        }
+
+        setStyles() {
+            // Container styles
+            this.container.style.position = 'relative';
+            this.container.style.transformStyle = 'preserve-3d';
+            this.container.style.backfaceVisibility = 'hidden';
+
+            // Icon one - relative position
+            if (this.icons.one) {
+                this.icons.one.style.position = 'relative';
+                this.icons.one.style.zIndex = '1';
+                this.icons.one.style.transformStyle = 'preserve-3d';
+                this.icons.one.style.backfaceVisibility = 'hidden';
+            }
+
+            // Other icons - absolute position
+            ['two', 'three', 'four'].forEach((key, index) => {
+                if (this.icons[key]) {
+                    this.icons[key].style.position = 'absolute';
+                    this.icons[key].style.left = '0';
+                    this.icons[key].style.top = '0';
+                    this.icons[key].style.zIndex = String(index + 2);
+                    this.icons[key].style.transformStyle = 'preserve-3d';
+                    this.icons[key].style.backfaceVisibility = 'hidden';
+                }
+            });
+        }
+
+        bindEvents() {
+            // Mouse move
+            document.addEventListener('mousemove', (e) => {
+                this.onMouseMove(e);
+            });
+
+            // Window resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    this.width = window.innerWidth;
+                    this.height = window.innerHeight;
+                }, 200);
+            });
+        }
+
+        onMouseMove(event) {
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+            
+            // Tính toán vị trí chuột từ tâm màn hình
+            const centerX = (mouseX - this.width / 2) / (this.width / 2);
+            const centerY = (mouseY - this.height / 2) / (this.height / 2);
+
+            // Di chuyển từng icon với depth khác nhau
+            Object.keys(this.icons).forEach((key) => {
+                const icon = this.icons[key];
+                if (!icon) return;
+
+                const depth = this.depths[key];
+                const moveX = centerX * depth * 100;
+                const moveY = centerY * depth * 100;
+                
+                icon.style.transform = `translate3d(${moveX}px, ${moveY}px, 0px)`;
+            });
+
+            // Update container transform
+            this.container.style.transform = 'translate3d(0px, 0px, 0px) rotate(0.0001deg)';
+        }
+    }
+
+    // Khởi tạo
+    function init() {
+        new GreenshiftParallax();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+    // Re-init khi cần thiết (cho AJAX load)
+    window.initGreenshiftParallax = init;
+
+})();
 
 

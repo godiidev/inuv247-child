@@ -70,9 +70,9 @@ function inuv_child_enqueue_styles()
     // Enqueue Font Awesome
     wp_enqueue_style(
         'inuv-awesome-css',
-        'https://use.fontawesome.com/releases/v5.14.0/css/all.css',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css',
         array(),
-        '5.14.0'
+        '6.7.2'
     );
 
     // WooCommerce styles
@@ -94,6 +94,26 @@ function inuv_child_enqueue_styles()
     );
 }
 add_action('wp_enqueue_scripts', 'inuv_child_enqueue_styles');
+
+/**
+ * Add Google Fonts with preconnect for better performance
+ */
+function inuv_child_enqueue_google_fonts()
+{
+    // Preconnect to Google Fonts
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+
+    // Enqueue Inter font
+    wp_enqueue_style(
+        'inuv-google-font-inter',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap',
+        array(),
+        null
+    );
+}
+add_action('wp_head', 'inuv_child_enqueue_google_fonts', 1);
+
 
 /**
  * Enqueue child theme scripts
@@ -122,6 +142,14 @@ function inuv_child_enqueue_scripts()
     wp_enqueue_script(
         'inuv-view-js',
         get_stylesheet_directory_uri() . '/assets/js/view.js',
+        array('jquery'),
+        INUV_CHILD_VERSION,
+        true
+    );
+    // Main view script
+    wp_enqueue_script(
+        'inuv-video-modal-js',
+        get_stylesheet_directory_uri() . '/assets/js/video-modal.js',
         array('jquery'),
         INUV_CHILD_VERSION,
         true
@@ -233,51 +261,3 @@ function inuv_child_flush_rewrite_rules()
     }
 }
 add_action('init', 'inuv_child_flush_rewrite_rules', 999);
-
-/**
- * Add admin notice for missing WooCommerce
- */
-function inuv_child_admin_notices()
-{
-    if (!class_exists('WooCommerce') && current_user_can('activate_plugins')) {
-?>
-        <div class="notice notice-warning is-dismissible">
-            <p>
-                <strong>Inuv Child Theme:</strong>
-                <?php _e('WooCommerce plugin is required for full theme functionality.', 'inuv-child'); ?>
-                <a href="<?php echo admin_url('plugin-install.php?s=woocommerce&tab=search&type=term'); ?>">
-                    <?php _e('Install WooCommerce', 'inuv-child'); ?>
-                </a>
-            </p>
-        </div>
-    <?php
-    }
-}
-add_action('admin_notices', 'inuv_child_admin_notices');
-
-/**
- * Debug info for admins only
- */
-function inuv_child_debug_info()
-{
-    if (defined('WP_DEBUG') && WP_DEBUG && current_user_can('manage_options')) {
-    ?>
-        <script type="text/javascript">
-            console.log('Inuv Child Theme Debug:', {
-                version: '<?php echo INUV_CHILD_VERSION; ?>',
-                woocommerce: <?php echo class_exists('WooCommerce') ? 'true' : 'false'; ?>,
-                user_logged_in: <?php echo is_user_logged_in() ? 'true' : 'false'; ?>,
-                page_type: '<?php
-                            if (is_shop()) echo 'shop';
-                            elseif (is_product()) echo 'product';
-                            elseif (is_cart()) echo 'cart';
-                            elseif (is_checkout()) echo 'checkout';
-                            elseif (is_account_page()) echo 'account';
-                            else echo 'other';
-                            ?>'
-            });
-        </script>
-<?php
-    }
-}
-add_action('wp_footer', 'inuv_child_debug_info', 999);
