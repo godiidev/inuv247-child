@@ -1,4 +1,12 @@
 @media only screen and (max-width: 600px) {
+
+  /* HOME PAGE RESPONSIVE STYLES */
+  .main-slider-two .image {
+    /* right: -520px; */
+    top: -150px;
+  }
+
+  /*HEADER RESPONSIVE STYLES */
   .coblog-header-five {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -277,6 +285,9 @@
   .solution-text span {
     font-size: 13px;
   }
+  .sponsors-section .vector-icon-one{
+    display: none;
+}
 }
 
 @media only screen and (min-width: 500px) and (max-aspect-ratio: 13/9),
@@ -286,6 +297,11 @@ only screen and (max-height: 421px) and (min-aspect-ratio: 13/9) {}
 only screen and (orientation: landscape) {}
 
 @media only screen and (min-width: 728px) {
+
+  /* HOME PAGE RESPONSIVE STYLES */
+  .main-slider-two .image {
+    top: -50px;
+  }
 
   /* Category reponsive style */
   .cat_grid_single>.responsive_thumb {
@@ -852,5 +868,7 @@ only screen and (orientation: landscape) {}
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
   }
 }
